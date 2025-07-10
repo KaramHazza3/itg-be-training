@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+html {
+  height: 100%;
+}
+
+main {
+  flex: 1;
+}
+
+header {
+  background-color: #c2c2c2;
+  color: black;
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+footer {
+  background-color: #c2c2c2;
+  color: black;
+  text-align: center;
+  padding: 1rem;
+}
+
+.user-info {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 0px;
+  p {
+    font-size: 20px;
+  }
+  button {
+    cursor: pointer;
+  }
+  .fa-sign-out:before {
+    content: "\f08b";
+    font-size: 19px;
+    background: black;
+    color: white;
+    padding: 7px;
+    border-radius: 16px;
+  }
+}
+
+header {
+  margin: 20px;
+  font-size: 20px;
+  border: 2px solid black;
+}
+
+footer {
+  margin-top: auto;
+  border-top: 1px solid #ccc;
+}

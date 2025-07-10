@@ -1,0 +1,30 @@
+<div class="button-container">
+  <%- include('partials/button', { buttonName: 'Back to Home', href: '/' }) %>
+</div>
+<div class="pc-container">
+  <form class="poll-form" method="POST" action="/polls/create" novalidate>
+    <div class="question-form">
+      <div class="question">
+        <p>Your question: <span style="color: red">*</span></p>
+        <textarea name="question" required></textarea>
+        <span class="frontend-error-message" id="question-error"></span>
+      </div>
+      <button type="submit">Submit Poll</button>
+      <pre style="color: red;"><span>(*)</span>&nbsp;Indicates a required field</pre>
+    </div>
+    <div class="options">
+        <%- include('partials/poll-option', { label: 'Option 1', name: "options[]", required: true }) %>
+        <span class="frontend-error-message" id="option1-error"></span>
+        
+        <%- include('partials/poll-option', { label: 'Option 2', name: "options[]", required: true }) %>
+        <span class="frontend-error-message" id="option2-error"></span>
+        
+        <%- include('partials/poll-option', { label: 'Option 3', name: "options[]", required: false }) %>
+        <span class="frontend-error-message" id="option3-error"></span>
+        
+        <%- include('partials/poll-option', { label: 'Option 4', name: "options[]", required: false }) %>
+        <span class="frontend-error-message" id="option4-error"></span>
+    </div>
+  </form>
+</div>
+<script src="/scripts/poll-create.js"></script>

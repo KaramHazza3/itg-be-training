@@ -1,0 +1,6 @@
+<section class="polls-view">
+    <h1><%= sectionTitle %></h1>
+    <% polls.forEach(function(poll) { %>
+        <%- include('poll-card', { poll: poll }) %>
+    <% }) %>
+</section>

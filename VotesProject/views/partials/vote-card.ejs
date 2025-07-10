@@ -1,0 +1,13 @@
+<% const colorClasses = ['color-1', 'color-2', 'color-3', 'color-4']; %>
+
+<% options.forEach((option, index) => { %>
+<div class="vote-card">
+  <h1><%= option.text %></h1>
+  <form action="/polls/<%= poll.id %>/vote" method="POST">
+    <input type="hidden" name="option_id" value="<%= option.id %>">
+    <button type="submit" class="vote-button <%= colorClasses[index] %>">
+      Vote <%= option.text %>
+    </button>
+  </form>
+</div>
+<% }) %>

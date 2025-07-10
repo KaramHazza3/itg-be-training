@@ -1,0 +1,38 @@
+<div class="button-container">
+    <%- include('partials/button', {
+    buttonName: 'Back to Home',
+    href: '/'
+})  %>
+</div>
+<div class="votes-container">
+    <div class="vote-title">
+        <h1><%= pollData.question %></h1>
+    </div>
+    <div class="votes-details" id="votesContainer" 
+    data-options='<%- JSON.stringify(pollData.options) %>'>
+        <div class="no-votes">
+            <%- include('partials/vote-options', {
+                options: pollData.options
+            }) %>
+        </div>
+        <canvas id="pieChart" width="400" height="400"></canvas>
+    </div>
+</div>
+
+<script src="/scripts/poll-chart.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+  socket.on("connect", () => {
+    console.log("Socket.IO connected");
+  });
+  socket.on("voteUpdate", (updatedOption) => {
+    console.log(updatedOption);
+    const optionElement = document.querySelector(`#option-${updatedOption.id}`);
+    const voteCountElement = document.querySelector(`#vote-count-${updatedOption.id}`);
+
+    if (optionElement && voteCountElement) {
+      voteCountElement.querySelector("h1").textContent = `${updatedOption.no_votes} votes`;
+    }
+  });
+</script>

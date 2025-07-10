@@ -1,0 +1,11 @@
+<div class="poll-vc">
+    <div class="vote-title">
+        <h1><%= poll.question %></h1>
+    </div>
+    <div class="vote-cards">
+        <%- include('partials/vote-card', {
+            options: poll.options,
+            href: `poll/${poll.id}/vote`
+        }) %>
+    </div>
+</div>

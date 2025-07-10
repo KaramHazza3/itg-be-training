@@ -1,0 +1,17 @@
+<div class="button-container">
+    <%- include('partials/button', {
+    buttonName: 'Create your own Poll',
+    href: 'polls/create'
+})  %>
+</div>
+<div class="polls-container">
+    <%- include('partials/polls-section', { 
+        sectionTitle: 'Top 3 Polls', 
+        polls: topThreePolls 
+    }) %>
+
+    <%- include('partials/polls-section', { 
+        sectionTitle: 'Recent Polls', 
+        polls: recentPolls 
+    }) %>
+</div>

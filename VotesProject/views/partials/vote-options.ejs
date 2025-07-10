@@ -1,0 +1,8 @@
+<% options.forEach((option) => { %>
+<div class="votes-options" id="option-<%= option.id %>">
+  <h1><%= option.text %></h1>
+</div>
+<div class="votes-options" id="vote-count-<%= option.id %>">
+  <h1><%= option.no_votes %> votes</h1>
+</div>
+<% }) %>

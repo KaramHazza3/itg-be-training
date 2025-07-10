@@ -1,0 +1,367 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+html {
+  height: 100%;
+}
+
+main {
+  flex: 1;
+}
+
+header {
+  background-color: #c2c2c2;
+  color: black;
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+footer {
+  background-color: #c2c2c2;
+  color: black;
+  text-align: center;
+  padding: 1rem;
+}
+
+.user-info {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 0px;
+}
+.user-info p {
+  font-size: 20px;
+}
+.user-info button {
+  cursor: pointer;
+}
+.user-info .fa-sign-out:before {
+  content: "\f08b";
+  font-size: 19px;
+  background: black;
+  color: white;
+  padding: 7px;
+  border-radius: 16px;
+}
+
+header {
+  margin: 20px;
+  font-size: 20px;
+  border: 2px solid black;
+}
+
+footer {
+  margin-top: auto;
+  border-top: 1px solid #ccc;
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.auth-form h2 {
+  text-align: center;
+  color: grey;
+  margin-bottom: 1.5rem;
+}
+.auth-form form .form-group {
+  margin-bottom: 0.5rem;
+}
+.auth-form form .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: grey;
+  font-weight: bold;
+}
+.auth-form form .form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid grey;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: white;
+}
+.auth-form form .form-group input:focus {
+  border-color: #ddd;
+  outline: none;
+  box-shadow: 0 0 3px rgba(221, 221, 221, 0.5);
+}
+.auth-form form .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.8rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: rgb(146, 145, 145);
+}
+.auth-form form .btn.blue {
+  background-color: #96b9e4;
+}
+.auth-form form .btn.blue:hover {
+  background-color: rgb(160.5, 192, 230.7);
+}
+.auth-form form .btn.yellow {
+  background-color: yellow;
+}
+.auth-form form .btn.yellow:hover {
+  background-color: rgb(255, 255, 25.5);
+}
+.auth-form form .btn.red {
+  background-color: red;
+}
+.auth-form form .btn.red:hover {
+  background-color: rgb(255, 25.5, 25.5);
+}
+.auth-form form p {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+.auth-form form p a {
+  text-decoration: none;
+}
+.auth-form form p a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  display: flex;
+  justify-content: center;
+  background-color: #721c24;
+  color: white;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.frontend-error-message {
+  display: block;
+  color: red;
+  font-size: 13px;
+  font-weight: bold;
+  height: 20px;
+}
+
+.polls-container {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.polls-view {
+  background-color: #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  border: 2px solid black;
+  padding: 20px;
+  width: 50%;
+  max-height: 600px;
+  font-size: 20px;
+  overflow-y: auto;
+}
+
+.poll-card {
+  background-color: white;
+  border: 2px solid black;
+  padding: 10px;
+  min-height: 120px;
+  font-size: 20px;
+  display: flex;
+  gap: 20px;
+}
+.poll-card .chart-img {
+  width: 90px;
+  height: 90px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 0 20px 20px 20px;
+}
+
+.navigator {
+  text-decoration: none;
+  background-color: #96b9e4;
+  padding: 3px 12px;
+  color: black;
+  border: 2px solid black;
+  font-size: 20px;
+  box-shadow: 3px 3px 3px black;
+}
+
+.poll-form {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ddd;
+  margin: 10px 20px;
+  height: 630px;
+  padding: 20px;
+  border: 2px solid black;
+}
+
+.question-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+}
+.question-form .question {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.question-form textarea {
+  width: 50%;
+  height: 200px;
+  resize: none;
+  padding: 10px;
+  border: 2px solid black;
+}
+.question-form button {
+  width: 50%;
+  padding: 10px 30px;
+  border: 2px solid black;
+  box-shadow: 3px 3px 3px black;
+  background-color: #b6d8a8;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 70px;
+  cursor: pointer;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px 20px 80px 0px;
+}
+.options .option {
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.options .option input {
+  padding: 10px;
+  width: 550px;
+  border: 2px solid black;
+  height: 40px;
+}
+
+.votes-container {
+  background-color: #ddd;
+  height: 89%;
+  margin: 0px 20px;
+  border: 2px solid black;
+}
+.votes-container .vote-title {
+  font-size: 25px;
+}
+.votes-container h1 {
+  display: flex;
+  justify-content: center;
+  padding: 31px 0px;
+  text-align: center;
+}
+.votes-container .votes-details {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.votes-container .no-votes {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  order: 1;
+  gap: 0px 100px;
+}
+
+.poll-vc {
+  background-color: #ddd;
+  height: 95%;
+  margin: 0px 20px;
+  border: 2px solid black;
+}
+.poll-vc h1 {
+  display: flex;
+  justify-content: center;
+  padding: 31px 0px;
+  font-size: 40px;
+}
+.poll-vc .vote-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  padding: 0px 50px;
+  gap: 70px;
+}
+.poll-vc .vote-cards .vote-card {
+  display: flex;
+  flex-grow: 1;
+  max-width: calc(50% - 35px);
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  gap: 30px;
+  width: 35%;
+  height: 230px;
+  border: 2px solid black;
+}
+.poll-vc .vote-cards .vote-card button {
+  padding: 10px;
+  width: 250px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 20px;
+}
+
+.vote-button.color-1 {
+  background-color: #FF6384;
+}
+.vote-button.color-2 {
+  background-color: #FFCE56;
+}
+.vote-button.color-3 {
+  background-color: #36A2EB;
+}
+.vote-button.color-4 {
+  background-color: #4BC0C0;
+}

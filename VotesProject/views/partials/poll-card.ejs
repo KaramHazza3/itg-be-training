@@ -1,0 +1,13 @@
+<div class="poll-card">
+    <img class="chart-img" src="images/chart.png" alt="pie chart">
+    <div class="card-info">
+      <a href="/polls/<%= poll.id %>"> <%= poll.question %> </a>
+      <p>
+      <% poll.options.forEach(option => { %>
+      <span><%= option.text %>: <%= option.no_votes %> votes&nbsp;&nbsp;</span>
+      <% }) %>
+    </p>
+      <p>(<%= poll.createdAt %>)</p>
+    </div>
+  </div>
+  

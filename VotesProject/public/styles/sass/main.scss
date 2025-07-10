@@ -1,0 +1,310 @@
+@use "reset" as *;
+@use "variables" as *;
+@use "mixins" as *;
+@use "sass:color";
+
+
+.auth-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: $input-background;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    text-align: center;
+    color: $text-color;
+    margin-bottom: 1.5rem;
+  }
+
+  form {
+    .form-group {
+      margin-bottom: 0.5rem;
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: $text-color;
+        font-weight: bold;
+      }
+
+      input {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid $border-color;
+        border-radius: 4px;
+        font-size: 1rem;
+        background-color: $input-background;
+
+        &:focus {
+          border-color: $layout-color;
+          outline: none;
+          box-shadow: 0 0 3px rgba($layout-color, 0.5);
+        }
+      }
+    }
+
+    .btn {
+      @include flex-center;
+      width: 100%;
+      padding: 0.8rem;
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      background-color: rgb(146, 145, 145);
+
+      &.blue {
+        background-color: $btn-blue;
+
+        &:hover {
+          background-color: color.mix(white, $btn-blue, 10%);
+        }
+      }
+
+      &.yellow {
+        background-color: $btn-yellow;
+
+        &:hover {
+          background-color: color.mix(white, $btn-yellow, 10%);
+        }
+      }
+
+      &.red {
+        background-color: $btn-red;
+
+        &:hover {
+          background-color: color.mix(white, $btn-red, 10%);
+        }
+      }
+    }
+
+    p {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+
+      a {
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.error-message {
+  display: flex;
+  justify-content: center;
+  background-color: #721c24;
+  color: white;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.frontend-error-message {
+  display: block;
+  color: red;
+  font-size: 13px;
+  font-weight: bold;
+  height: 20px;
+}
+
+.polls-container {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.polls-view {
+  background-color: $layout-color;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  border: 2px solid black;
+  padding: 20px;
+  width: 50%;
+  max-height: 600px;
+  font-size: 20px;
+  overflow-y: auto;
+}
+
+.poll-card {
+  background-color: white;
+  border: 2px solid black;
+  padding: 10px;
+  min-height: 120px;
+  font-size: 20px;
+  display: flex;
+  gap: 20px;
+
+  .chart-img {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 0 20px 20px 20px;
+}
+
+.navigator {
+  text-decoration: none;
+  background-color: $btn-blue;
+  padding: 3px 12px;
+  color: black;
+  border: 2px solid black;
+  font-size: 20px;
+  box-shadow: 3px 3px 3px black;
+}
+
+.poll-form {
+  display: flex;
+  justify-content: space-between;
+  background-color: $layout-color;
+  margin: 10px 20px;
+  height: 630px;
+  padding: 20px;
+  border: 2px solid black;
+}
+
+.question-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+  .question {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  textarea {
+    width: 50%;
+    height: 200px;
+    resize: none;
+    padding: 10px;
+    border: 2px solid black;
+  }
+  button {
+    width: 50%;
+    padding: 10px 30px;
+    border: 2px solid black;
+    box-shadow: 3px 3px 3px black;
+    background-color: #b6d8a8;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 70px;
+    cursor: pointer;
+  }
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px 20px 80px 0px;
+  .option {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    input {
+      padding: 10px;
+      width: 550px;
+      border: 2px solid black;
+      height: 40px;
+    }
+  }
+}
+
+.votes-container {
+  background-color: $layout-color;
+  height: 89%;
+  margin: 0px 20px;
+  border: 2px solid black;
+
+  .vote-title {
+    font-size: 25px;
+  }
+
+  h1 {
+    display: flex;
+    justify-content: center;
+    padding: 31px 0px;
+    text-align: center;
+  }
+  .votes-details {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .no-votes {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    order: 1;
+    gap: 0px 100px;
+  }
+}
+.poll-vc {
+  background-color: $layout-color;
+  height: 95%;
+  margin: 0px 20px;
+  border: 2px solid black;
+  h1 {
+    display: flex;
+    justify-content: center;
+    padding: 31px 0px;
+    font-size: 40px;
+  }
+  .vote-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    padding: 0px 50px;
+    gap: 70px;
+    .vote-card {
+      display: flex;
+      flex-grow: 1;
+      max-width: calc(50% - 35px);
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      gap: 30px;
+      width: 35%;
+      height: 230px;
+      border: 2px solid black;
+      button {
+        padding: 10px;
+        width: 250px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.vote-button {
+  @each $name, $color in $vote-button-colors {
+    &.#{$name} {
+      background-color: $color;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<header>
+  <h1>Voting Dojo</h1>
+  <% if (user) { %>
+  <div class="user-info">
+    <p>Hello, <%= user.userName %>!</p>
+    <form action="/logout" method="POST">
+      <button type="submit" style="background: none; border: none">
+        <i class="fa fa-sign-out" aria-hidden="true"></i>
+      </button>
+    </form>
+  </div>
+  <% } %>
+</header>
